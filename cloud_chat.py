@@ -41,8 +41,8 @@ with st.sidebar:
     # Feature 1: Model Parameters (The "Pro" Controls)
     st.markdown("### 🧠 Model Settings")
     model_option = st.selectbox(
-        "Choose Model",
-        ("llama-3.3-70b-versatile", "mixtral-8x7b-32768", "gemma-7b-it"),
+        "Choose Model: ",
+        ("llama-3.3-70b-versatile", "llama-3.1-8b-instant"),
         index=0
     )
     # Creativity Slider (Temperature)
@@ -130,4 +130,5 @@ if prompt := st.chat_input("Ask Gyaan AI anything..."):
             # st.toast("Response Generated!", icon="✅") 
         except Exception as e:
             st.error(f"Error: {e}")
+
     st.session_state.messages.append({"role": "assistant", "content": full_response})
